@@ -17,10 +17,46 @@ class BitcoinExplorer extends Component {
             hashTx: '',
             address: '',
             displayBlockInfo: false,
-            buttonBlockCLicked:false,
             displayTransactionInfo: false,
             displayAddressInfo: false
         }
+        this.handleTxComponentUnmount = this.handleTxComponentUnmount.bind(this);
+        this.handleBlockComponentUnmount = this.handleBLockComponentUnmount.bind(this);
+        this.handleAddressComponentUnmount = this.handleAddressComponentUnmount.bind(this);
+    }
+
+    handleTxComponentUnmount(param) {
+        if(typeof param === 'string') {
+            this.setState({
+                displayTransactionInfo:false,
+                displayAddressInfo:true,
+                address: param,
+                inputTx:''
+            })
+        } else{
+            this.setState({
+                displayTransactionInfo:false,
+                displayBlockInfo:true,
+                blockId: param,
+                inputTx:''
+            })
+        }
+    }
+
+    handleBLockComponentUnmount(tx){
+        this.setState({
+            displayTransactionInfo:true,
+            displayBlockInfo:false,
+            hashTx: tx
+        })
+    }
+
+    handleAddressComponentUnmount(tx){
+        this.setState({
+            displayAddressInfo:false,
+            displayTransactionInfo:true,
+            hashTx:tx
+        })
     }
 
     onChangeBlock(event){
@@ -28,7 +64,6 @@ class BitcoinExplorer extends Component {
             inputBlock: event.target.value,
             inputTx: '',
             inputAddress: '',
-            buttonBlockCLicked:false
         });
     }
 
@@ -37,7 +72,6 @@ class BitcoinExplorer extends Component {
             inputBlock: '',
             inputTx: event.target.value,
             inputAddress: '',
-            displayTransactionInfo: false
         });
     }
 
@@ -46,7 +80,6 @@ class BitcoinExplorer extends Component {
             inputBlock: '',
             inputTx: '',
             inputAddress: event.target.value,
-            displayAddressInfo: false
         });
     }
 
@@ -54,7 +87,6 @@ class BitcoinExplorer extends Component {
         if(this.state.inputBlock){
             this.setState({
                 blockId: this.state.inputBlock,
-                buttonBlockCLicked:true,
                 displayBlockInfo: true,
                 displayTransactionInfo: false,
                 displayAddressInfo: false
@@ -95,6 +127,7 @@ class BitcoinExplorer extends Component {
                         <div className="input-group col-md-6">
                             <input 
                                 className="form-control py-2 border-right-0 border" 
+                                id="inputBlock"
                                 type="search" 
                                 placeholder="Block number"
                                 value={this.state.inputBlock} 
@@ -143,13 +176,13 @@ class BitcoinExplorer extends Component {
                     </div>
                     
                  </div>
-                
-                    {this.  this.state.buttonBlockCLicked ? <BlockInfo blockId={this.state.blockId}/> : null}
-                    {this.state.displayTransactionInfo ? <TransactionInfo hashTx={this.state.hashTx}/> : null}
-                    {this.state.displayAddressInfo ? <AddressInfo address={this.state.address}/> : null}
+                    {this.state.displayBlockInfo ? <BlockInfo blockId={this.state.blockId} unmountMe={this.handleBlockComponentUnmount}/> : null}
+                    {this.state.displayTransactionInfo ? <TransactionInfo hashTx={this.state.hashTx} unmountMe={this.handleTxComponentUnmount}/> : null}
+                    {this.state.displayAddressInfo ? <AddressInfo address={this.state.address} unmountMe={this.handleAddressComponentUnmount}/> : null}
             </div>
         );  
     }
 }
 
 export default BitcoinExplorer;
+
