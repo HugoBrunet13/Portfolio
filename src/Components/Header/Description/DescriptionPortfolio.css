@@ -1,5 +1,12 @@
 .DescriptionPortfolio{
-    border:1px solid brown;
     margin-top:1%;
     margin-bottom:1%;
+    font-family: "poppins", serif;
+    color: #888888;
 }
+
+h1{
+    color: #313131;
+}
+
+

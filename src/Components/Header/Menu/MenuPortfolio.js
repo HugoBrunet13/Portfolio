@@ -18,7 +18,7 @@ class MenuPortfolio extends Component {
                             type="button"
                             className="link-button" 
                             onClick={() => this.showComponent('btc')}>
-                            Bitcoin Explorer
+                            <strong>Bitcoin Explorer</strong>
                         </button>
                     </div>
                     <div className="col-sm">
@@ -26,7 +26,15 @@ class MenuPortfolio extends Component {
                             type="button"
                             className="link-button" 
                             onClick={() => this.showComponent('bestRate')}>
-                            Best rate
+                            <strong>The Exchange Rate Path Problem</strong>
+                        </button>
+                    </div>
+                    <div className="col-sm">
+                        <button
+                            type="button"
+                            className="link-button" 
+                            onClick={() => this.showComponent('blocktricity')}>
+                            <strong>Blocktricity</strong>
                         </button>
                     </div>
                     <div className="col-sm">
@@ -34,7 +42,7 @@ class MenuPortfolio extends Component {
                             type="button"
                             className="link-button" 
                             onClick={() => this.showComponent('ERC20')}>
-                            ERC20
+                            <strong>ERC20 Token</strong>
                         </button>
                     </div>
                     <div className="col-sm">
@@ -42,7 +50,7 @@ class MenuPortfolio extends Component {
                             type="button"
                             className="link-button" 
                             onClick={() => this.showComponent('POE')}>
-                            POE
+                            <strong>Proof of Existance</strong>
                         </button>
                     </div>
                 </div>

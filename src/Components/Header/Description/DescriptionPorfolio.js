@@ -7,7 +7,7 @@ class DescriptionPortfolio extends Component {
             
 
             <div className="DescriptionPortfolio">
-                <h1>Welcome on my portfolio</h1>
+                <h1><strong>Welcome on my portfolio</strong></h1>
                 <p>
                     Description
                 </p>

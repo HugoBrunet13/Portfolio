@@ -5,7 +5,7 @@ class BestRate extends Component{
     render() {
         return(
             <div className="BestRate">
-                <h1>Find best rate</h1>
+                <h2>Find best rate</h2>
             </div>
             
         )

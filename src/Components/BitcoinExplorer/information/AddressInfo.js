@@ -64,12 +64,14 @@ class AddressInfo extends Component {
                         <td>Transactions</td>
                             <td>
                                 {this.state.data.txrefs.map((tx) => 
-                                   <button key={tx}
-                                    type="button"
-                                    className="link-button" 
-                                    onClick={() => this.dismiss(tx.tx_hash)}>
-                                    {tx.tx_hash}
-                                  </button>
+                                   <div key={tx}>
+                                    <button
+                                        type="button"
+                                        className="link-button" 
+                                        onClick={() => this.dismiss(tx.tx_hash)}>
+                                        {tx.tx_hash}
+                                    </button>
+                                  </div>
                                 )}
                             </td> 
                         </tr>					

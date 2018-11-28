@@ -12,3 +12,17 @@
   .link-button:focus {
   text-decoration: none;
   }
+
+.table td{
+  width: 50%;
+}
+
+@media (max-width:825px){
+  .table {
+    white-space: nowrap;
+    overflow: auto;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100%;
+  }
+}

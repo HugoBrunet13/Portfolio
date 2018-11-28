@@ -121,10 +121,10 @@ class BitcoinExplorer extends Component {
         return(
             <div className="BitcoinExplorer">
                 <div> 
-                    <h1>Bitcoin explorer</h1>
+                    <h2>Bitcoin explorer</h2>
                                     
                     <div className="row justify-content-md-center">
-                        <div className="input-group col-md-8">
+                        <div className="input-group col-md-6">
                             <input 
                                 className="form-control py-2 border-right-0 border" 
                                 id="inputBlock"
@@ -142,7 +142,7 @@ class BitcoinExplorer extends Component {
                     </div>
 
                     <div className="row justify-content-md-center">
-                        <div className="input-group col-md-8">
+                        <div className="input-group col-md-6">
                             <input 
                                 className="form-control py-2 border-right-0 border" 
                                 type="search" 
@@ -159,7 +159,7 @@ class BitcoinExplorer extends Component {
                     </div>
 
                     <div className="row justify-content-md-center">
-                        <div className="input-group col-md-8">
+                        <div className="input-group col-md-6">
                             <input 
                                 className="form-control py-2 border-right-0 border" 
                                 type="search" 
