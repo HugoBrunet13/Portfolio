@@ -4,15 +4,18 @@ import BitcoinExplorer from './Components/BitcoinExplorer/BitcoinExplorer';
 import BestRate from './Components/BestRate/BestRate'
 import ERC20Token from './Components/ERC20Token/ERC20Token';
 import POE from './Components/POE/POE';
-import Blocktricity from './Components/Blocktricity/Blocktricity'
+import Blocktricity from './Components/Blocktricity/Blocktricity';
 import './App.css';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faPython } from '@fortawesome/free-brands-svg-icons';
 
 
 
 
-library.add(faSearch)
+library.add(faSearch, faGithub, faPython)
+console.log(library)
 
 class App extends Component {
 
